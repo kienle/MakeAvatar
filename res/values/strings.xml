@@ -6,4 +6,8 @@
 
     <string name="static_text">Static</string>
 
+    <string name="reset">Reset</string>
+
+    <string name="preview">Preview</string>
+
 </resources>
