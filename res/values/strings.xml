@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">MakeAvatar</string>
+
+    <string name="animated">Animated</string>
+
+    <string name="static_text">Static</string>
+
+</resources>
