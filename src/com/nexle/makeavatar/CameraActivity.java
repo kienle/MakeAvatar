@@ -583,41 +583,6 @@ public class CameraActivity extends Activity implements OnClickListener, Callbac
         @Override
         protected void onPostExecute(String result) {
         	
-//        	try {
-//		        ExifInterface exif = new ExifInterface(result);
-//		        int orientation = exif.getAttributeInt(
-//		                ExifInterface.TAG_ORIENTATION,
-//		                ExifInterface.ORIENTATION_NORMAL);
-//
-//		        int angle = 0;
-//
-//		        if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
-//		            angle = 90;
-//		        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_180) {
-//		            angle = 180;
-//		        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
-//		            angle = 270;
-//		        }
-//
-//		        Matrix mat = new Matrix();
-//		        mat.postRotate(angle);
-//		        BitmapFactory.Options options = new BitmapFactory.Options();
-//		        options.inSampleSize = 2;
-//
-//		        Bitmap bmp = BitmapFactory.decodeStream(new FileInputStream(imgFile),
-//		                null, options);
-//		        Bitmap bitmap = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(),
-//		                bmp.getHeight(), mat, true);
-//		        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//		        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-//		        mIvAvatar1.setImageBitmap(bitmap);
-//
-//		    } catch (IOException e) {
-//		        Log.w("TAG", "-- Error in setting image");
-//		    } catch (OutOfMemoryError oom) {
-//		        Log.w("TAG", "-- OOM Error in setting image");
-//		    }
-             
         	mIbCamera.setEnabled(true);
         	for (int i = 0; i < 4; i++) {
             	if (!mImageList[i]) {
