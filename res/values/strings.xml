@@ -10,4 +10,11 @@
 
     <string name="preview">Preview</string>
 
+    <string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="ok">OK</string>
+	<string name="cancel">Cancel</string>
+	<string name="dialog_title">Information</string>
+    <string name="storage_low_error">There are not enough storage to use this feature. Please free some.</string>
+    <string name="message_delete_confirm">Do you want to delete this item?</string>
 </resources>

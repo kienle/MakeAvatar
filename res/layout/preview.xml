@@ -118,7 +118,8 @@
                     android:gravity="center"
                     android:orientation="horizontal" >
 
-                    <ImageView
+                    <ImageButton
+                        android:id="@+id/ibChangeCam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/arrow" />
@@ -167,29 +168,29 @@
 
                 <ImageView
                     android:id="@+id/ivSmallAva1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/small_avar_size"
+                    android:layout_height="@dimen/small_avar_size"
                     android:layout_weight="1"
                     android:src="@drawable/small_avatar" />
 
                 <ImageView
                     android:id="@+id/ivSmallAva2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/small_avar_size"
+                    android:layout_height="@dimen/small_avar_size"
                     android:layout_weight="1"
                     android:src="@drawable/small_avatar" />
 
                 <ImageView
                     android:id="@+id/ivSmallAva3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/small_avar_size"
+                    android:layout_height="@dimen/small_avar_size"
                     android:layout_weight="1"
                     android:src="@drawable/small_avatar" />
 
                 <ImageView
                     android:id="@+id/ivSmallAva4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/small_avar_size"
+                    android:layout_height="@dimen/small_avar_size"
                     android:layout_weight="1"
                     android:src="@drawable/small_avatar" />
             </LinearLayout>
@@ -201,8 +202,8 @@
             android:background="@color/dark_purple"
             android:padding="20dp" >
 
-            <ImageView
-                android:id="@+id/ivDelete"
+            <ImageButton
+                android:id="@+id/ibDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -210,15 +211,15 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/x" />
 
-            <ImageView
-                android:id="@+id/ivCapture"
+            <ImageButton
+                android:id="@+id/ibCapture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:background="@drawable/circle_violet" />
 
-            <ImageView
-                android:id="@+id/ivDelete"
+            <ImageButton
+                android:id="@+id/ibCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

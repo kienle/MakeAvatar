@@ -13,7 +13,6 @@ import android.hardware.Camera;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -158,28 +157,49 @@ public class PreviewDemo extends Activity implements OnClickListener {
 
         bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
         mutableBitmap = bmp.copy(Bitmap.Config.ARGB_8888, true);
-        savePhoto(mutableBitmap);
+        
+        cropImage(mutableBitmap);
         dialog.dismiss();
     }
-
-
-
-    class SavePhotoTask extends AsyncTask < byte[], String, String > {@Override
-        protected String doInBackground(byte[]...jpeg) {
-            File photo = new File(Environment.getExternalStorageDirectory(), "photo.jpg");
-            if (photo.exists()) {
-                photo.delete();
-            }
-            try {
-                FileOutputStream fos = new FileOutputStream(photo.getPath());
-                fos.write(jpeg[0]);
-                fos.close();
-            } catch (java.io.IOException e) {
-                Log.e("PictureDemo", "Exception in photoCallback", e);
-            }
-            return (null);
-        }
+    
+    private void cropImage(Bitmap bitmap) {
+    	// Create new thread to crop.
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//            	Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.bac);
+//            	bitmap = Bitmap.createScaledBitmap(bitmap, 218, 300, true);
+            	Bitmap faceTemplate = BitmapFactory.decodeResource(getResources(), R.drawable.face_oblong1);
+                faceTemplate = Bitmap.createScaledBitmap(faceTemplate, bitmap.getWidth(), bitmap.getHeight(), true);
+                // Crop image using the correct template size.
+                Bitmap croppedImg = ImageProcess.cropImage(bitmap, faceTemplate, bitmap.getWidth(), bitmap.getHeight());
+                savePhoto(croppedImg);
+//                dialog.dismiss();
+                // Send a message to the Handler indicating the Thread has finished.
+//                mCropHandler.obtainMessage(DISPLAY_IMAGE, -1, -1, croppedImg).sendToTarget();
+//            }
+//        }).start();
     }
+
+
+
+//    class SavePhotoTask extends AsyncTask < byte[], String, String > {
+//    	@Override
+//        protected String doInBackground(byte[]...jpeg) {
+//            File photo = new File(Environment.getExternalStorageDirectory(), "photo.jpg");
+//            if (photo.exists()) {
+//                photo.delete();
+//            }
+//            try {
+//                FileOutputStream fos = new FileOutputStream(photo.getPath());
+//                fos.write(jpeg[0]);
+//                fos.close();
+//            } catch (java.io.IOException e) {
+//                Log.e("PictureDemo", "Exception in photoCallback", e);
+//            }
+//            return (null);
+//        }
+//    }
 
 
     public void savePhoto(Bitmap bmp) {
